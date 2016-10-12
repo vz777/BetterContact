@@ -1,0 +1,26 @@
+<?php
+
+return array(
+    'Address' => 'Address',
+    'Address of your company' => 'Address of your company',
+    'City' => 'City',
+    'Company' => 'Company',
+    'Company city' => 'Company city',
+    'Company country' => 'Company country',
+    'Company zip code' => 'Company zip code',
+    'Country' => 'Country',
+    'Email address' => 'Email address',
+    'First Name' => 'First Name',
+    'Function' => 'Function',
+    'Last name' => 'Last name',
+    'Name of your company' => 'Name of your company',
+    'Phone number' => 'Phone number',
+    'Please enter your message here.' => 'Please enter your message here.',
+    'Your Message' => 'Your Message',
+    'Your e-mail address' => 'Your e-mail address',
+    'Your first Name' => 'Your first Name',
+    'Your function in the company' => 'Your function in the company',
+    'Your last Name' => 'Your last Name',
+    'Your phone number' => 'Your phone number',
+    'Zip Code' => 'Zip Code',
+);

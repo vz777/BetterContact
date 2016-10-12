@@ -1,0 +1,18 @@
+Hello,
+
+A new contat message was sent :
+
+Date: {format_date date=$date}
+Last name: {$lastname}
+First name: {$firstname}
+Company: {$company}
+Fonction: {$function}
+Address: {$address nofilter}
+Zip code: {$zipcode}
+City: {$city}
+Country: {$country}
+E-mail address: {$email}
+Phone: {$phone}
+Message : {$message nofilter}
+
+Have a nice day !

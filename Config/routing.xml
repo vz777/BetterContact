@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <!-- Replace default route -->
+    <route id="contact.send" path="/contact" methods="post">
+        <default key="_controller">BetterContact\Controller\ContactController::sendAction</default>
+        <default key="_view">better-contact</default>
+    </route>
+
+    <route id="contact.view" path="/contact">
+        <default key="_controller">Thelia\Controller\Front\DefaultController::noAction</default>
+        <default key="_view">better-contact</default>
+    </route>
+</routes>
