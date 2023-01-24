@@ -5,6 +5,6 @@
         xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
 
     <forms>
-        <form name="bettercontact.form" class="BetterContact\Form\ContactForm" />
+        <form name="bettercontact_form" class="BetterContact\Form\ContactForm" />
     </forms>
 </config>

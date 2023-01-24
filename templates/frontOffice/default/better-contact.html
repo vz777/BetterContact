@@ -1,7 +1,7 @@
 {extends file="contact.html"}
 
 {block name="contact-form"}
-    {form name="bettercontact.form"}
+    {form name="bettercontact_form"}
         <form id="form-contact" action="{url path="/contact"}" method="post">
             {form_hidden_fields}
             
@@ -18,11 +18,11 @@
                     <div class="row">
                         {form_field field="firstname"}
                             <div class="form-group group-name col-sm-6{if $error} has-error{/if}">
-                                <label class="control-label" for="{$label_attr.for}">{$label}{if $required} <span class="required">*</span>{/if}</label>
+                                <label class="control-label" for="{$label_attr.for|default:null}">{$label|default:false}{if $required} <span class="required">*</span>{/if}</label>
                                 <div class="control-input">
-                                    <input type="text" name="{$name}" id="{$label_attr.for}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
+                                    <input type="text" name="{$name}" id="{$label_attr.for|default:null}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
                                     {if $error }
-                                        <span class="help-block">{$message}</span>
+                                        <span class="help-block">{$message|default:null}</span>
                                         {assign var="error_focus" value="true"}
                                     {elseif $value != "" && !$error}
                                         <span class="help-block"><i class="fa fa-check"></i></span>
@@ -33,11 +33,11 @@
     
                         {form_field field="lastname"}
                             <div class="form-group group-name col-sm-6{if $error} has-error{/if}">
-                                <label class="control-label" for="{$label_attr.for}">{$label}{if $required} <span class="required">*</span>{/if}</label>
+                                <label class="control-label" for="{$label_attr.for|default:null}">{$label}{if $required} <span class="required">*</span>{/if}</label>
                                 <div class="control-input">
-                                    <input type="text" name="{$name}" id="{$label_attr.for}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
+                                    <input type="text" name="{$name}" id="{$label_attr.for|default:null}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
                                     {if $error }
-                                        <span class="help-block">{$message}</span>
+                                        <span class="help-block">{$message|default:null}</span>
                                         {assign var="error_focus" value="true"}
                                     {elseif $value != "" && !$error}
                                         <span class="help-block"><i class="fa fa-check"></i></span>
@@ -48,11 +48,11 @@
     
                         {form_field field="company"}
                             <div class="form-group group-name col-sm-6{if $error} has-error{/if}">
-                                <label class="control-label" for="{$label_attr.for}">{$label}{if $required} <span class="required">*</span>{/if}</label>
+                                <label class="control-label" for="{$label_attr.for|default:null}">{$label}{if $required} <span class="required">*</span>{/if}</label>
                                 <div class="control-input">
-                                    <input type="text" name="{$name}" id="{$label_attr.for}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
+                                    <input type="text" name="{$name}" id="{$label_attr.for|default:null}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
                                     {if $error }
-                                        <span class="help-block">{$message}</span>
+                                        <span class="help-block">{$message|default:null}</span>
                                         {assign var="error_focus" value="true"}
                                     {elseif $value != "" && !$error}
                                         <span class="help-block"><i class="fa fa-check"></i></span>
@@ -63,11 +63,11 @@
     
                         {form_field field="function"}
                             <div class="form-group group-name col-sm-6{if $error} has-error{/if}">
-                                <label class="control-label" for="{$label_attr.for}">{$label}{if $required} <span class="required">*</span>{/if}</label>
+                                <label class="control-label" for="{$label_attr.for|default:null}">{$label}{if $required} <span class="required">*</span>{/if}</label>
                                 <div class="control-input">
-                                    <input type="text" name="{$name}" id="{$label_attr.for}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
+                                    <input type="text" name="{$name}" id="{$label_attr.for|default:null}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
                                     {if $error }
-                                        <span class="help-block">{$message}</span>
+                                        <span class="help-block">{$message|default:null}</span>
                                         {assign var="error_focus" value="true"}
                                     {elseif $value != "" && !$error}
                                         <span class="help-block"><i class="fa fa-check"></i></span>
@@ -78,11 +78,11 @@
                         
                         {form_field field="address"}
                             <div class="form-group group-message col-sm-12{if $error} has-error{/if}">
-                                <label class="control-label" for="{$label_attr.for}">{$label}{if $required} <span class="required">*</span>{/if}</label>
+                                <label class="control-label" for="{$label_attr.for|default:null}">{$label}{if $required} <span class="required">*</span>{/if}</label>
                                 <div class="control-input">
-                                    <textarea name="{$name}" id="{$label_attr.for}" placeholder="{$label_attr.placeholder}" rows="2" class="form-control"{if $required} aria-required="true" required{/if}>{$value}</textarea>
+                                    <textarea name="{$name}" id="{$label_attr.for|default:null}" placeholder="{$label_attr.placeholder}" rows="2" class="form-control"{if $required} aria-required="true" required{/if}>{$value}</textarea>
                                     {if $error }
-                                        <span class="help-block">{$message}</span>
+                                        <span class="help-block">{$message|default:null}</span>
                                         {assign var="error_focus" value="true"}
                                     {/if}
                                 </div>
@@ -91,11 +91,11 @@
     
                         {form_field field="zipcode"}
                             <div class="form-group group-name col-sm-2{if $error} has-error{/if}">
-                                <label class="control-label" for="{$label_attr.for}">{$label}{if $required} <span class="required">*</span>{/if}</label>
+                                <label class="control-label" for="{$label_attr.for|default:null}">{$label}{if $required} <span class="required">*</span>{/if}</label>
                                 <div class="control-input">
-                                    <input type="text" name="{$name}" id="{$label_attr.for}" class="form-control" maxlength="8" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
+                                    <input type="text" name="{$name}" id="{$label_attr.for|default:null}" class="form-control" maxlength="8" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
                                     {if $error }
-                                        <span class="help-block">{$message}</span>
+                                        <span class="help-block">{$message|default:null}</span>
                                         {assign var="error_focus" value="true"}
                                     {elseif $value != "" && !$error}
                                         <span class="help-block"><i class="fa fa-check"></i></span>
@@ -106,11 +106,11 @@
     
                         {form_field field="city"}
                             <div class="form-group group-name col-sm-6{if $error} has-error{/if}">
-                                <label class="control-label" for="{$label_attr.for}">{$label}{if $required} <span class="required">*</span>{/if}</label>
+                                <label class="control-label" for="{$label_attr.for|default:null}">{$label}{if $required} <span class="required">*</span>{/if}</label>
                                 <div class="control-input">
-                                    <input type="text" name="{$name}" id="{$label_attr.for}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
+                                    <input type="text" name="{$name}" id="{$label_attr.for|default:null}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
                                     {if $error }
-                                        <span class="help-block">{$message}</span>
+                                        <span class="help-block">{$message|default:null}</span>
                                         {assign var="error_focus" value="true"}
                                     {elseif $value != "" && !$error}
                                         <span class="help-block"><i class="fa fa-check"></i></span>
@@ -121,11 +121,11 @@
     
                         {form_field field="country"}
                             <div class="form-group group-name col-sm-4{if $error} has-error{/if}">
-                                <label class="control-label" for="{$label_attr.for}">{$label}{if $required} <span class="required">*</span>{/if}</label>
+                                <label class="control-label" for="{$label_attr.for|default:null}">{$label}{if $required} <span class="required">*</span>{/if}</label>
                                 <div class="control-input">
-                                    <input type="text" name="{$name}" id="{$label_attr.for}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
+                                    <input type="text" name="{$name}" id="{$label_attr.for|default:null}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
                                     {if $error }
-                                        <span class="help-block">{$message}</span>
+                                        <span class="help-block">{$message|default:null}</span>
                                         {assign var="error_focus" value="true"}
                                     {elseif $value != "" && !$error}
                                         <span class="help-block"><i class="fa fa-check"></i></span>
@@ -136,11 +136,11 @@
     
                         {form_field field="email"}
                             <div class="form-group group-email col-sm-6{if $error} has-error{/if}">
-                                <label class="control-label" for="{$label_attr.for}">{$label}{if $required} <span class="required">*</span>{/if}</label>
+                                <label class="control-label" for="{$label_attr.for|default:null}">{$label}{if $required} <span class="required">*</span>{/if}</label>
                                 <div class="control-input">
-                                    <input type="email" name="{$name}" id="{$label_attr.for}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
+                                    <input type="email" name="{$name}" id="{$label_attr.for|default:null}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
                                     {if $error }
-                                        <span class="help-block">{$message}</span>
+                                        <span class="help-block">{$message|default:null}</span>
                                         {assign var="error_focus" value="true"}
                                     {elseif $value != "" && !$error}
                                         <span class="help-block"><i class="fa fa-check"></i></span>
@@ -151,11 +151,11 @@
                         
                         {form_field field="phone"}
                             <div class="form-group group-email col-sm-6{if $error} has-error{/if}">
-                                <label class="control-label" for="{$label_attr.for}">{$label}{if $required} <span class="required">*</span>{/if}</label>
+                                <label class="control-label" for="{$label_attr.for|default:null}">{$label}{if $required} <span class="required">*</span>{/if}</label>
                                 <div class="control-input">
-                                    <input type="text" name="{$name}" id="{$label_attr.for}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
+                                    <input type="text" name="{$name}" id="{$label_attr.for|default:null}" class="form-control" maxlength="255" placeholder="{$label_attr.placeholder}" value="{$value}"{if $required} aria-required="true" required{/if}{if !isset($error_focus) && $error} autofocus{/if}>
                                     {if $error }
-                                        <span class="help-block">{$message}</span>
+                                        <span class="help-block">{$message|default:null}</span>
                                         {assign var="error_focus" value="true"}
                                     {elseif $value != "" && !$error}
                                         <span class="help-block"><i class="fa fa-check"></i></span>
@@ -166,11 +166,11 @@
     
                         {form_field field="message"}
                             <div class="form-group group-message col-sm-12{if $error} has-error{/if}">
-                                <label class="control-label" for="{$label_attr.for}">{$label}{if $required} <span class="required">*</span>{/if}</label>
+                                <label class="control-label" for="{$label_attr.for|default:null}">{$label}{if $required} <span class="required">*</span>{/if}</label>
                                 <div class="control-input">
-                                    <textarea name="{$name}" id="{$label_attr.for}" placeholder="{$label_attr.placeholder}" rows="6" class="form-control"{if $required} aria-required="true" required{/if}>{$value}</textarea>
+                                    <textarea name="{$name}" id="{$label_attr.for|default:null}" placeholder="{$label_attr.placeholder}" rows="6" class="form-control"{if $required} aria-required="true" required{/if}>{$value}</textarea>
                                     {if $error }
-                                        <span class="help-block">{$message}</span>
+                                        <span class="help-block">{$message|default:null}</span>
                                         {assign var="error_focus" value="true"}
                                     {elseif $value != "" && !$error}
                                         <span class="help-block"><i class="fa fa-check"></i></span>

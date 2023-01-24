@@ -13,6 +13,7 @@
 namespace BetterContact;
 
 use Propel\Runtime\Connection\ConnectionInterface;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ServicesConfigurator;
 use Thelia\Model\Base\MessageQuery;
 use Thelia\Model\Message;
 use Thelia\Module\BaseModule;
@@ -21,10 +22,10 @@ class BetterContact extends BaseModule
 {
     /** @var string */
     const DOMAIN_NAME = 'bettercontact';
-    const FORM_NAME    = 'bettercontact.form';
+    const FORM_NAME    = 'bettercontact_form';
     const MESSAGE_NAME = 'bettercontact.mail_template';
 
-    public function postActivation(ConnectionInterface $con = null)
+    public function postActivation(ConnectionInterface $con = null): void
     {
         // Create messages from templates, if not already defined
         $email_templates_dir = __DIR__.DS.'I18n'.DS.'email-templates'.DS;
@@ -50,5 +51,13 @@ class BetterContact extends BaseModule
                 ->save()
             ;
         }
+    }
+
+    public static function configureServices(ServicesConfigurator $servicesConfigurator): void
+    {
+        $servicesConfigurator->load(self::getModuleCode().'\\', __DIR__)
+            ->exclude([THELIA_MODULE_DIR . ucfirst(self::getModuleCode()). "/I18n/*"])
+            ->autowire(true)
+            ->autoconfigure(true);
     }
 }

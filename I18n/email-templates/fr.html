@@ -4,16 +4,16 @@
 
 <p>
     Date: {format_date date=$date}<br>
-    Nom: {$lastname}<br>
-    Prénom: {$firstname}<br>
-    Société: {$company}<br>
-    Fonction: {$function}<br>
-    Adresse: {$address|nl2br nofilter}<br>
-    Code postal: {$zipcode}<br>
-    Ville: {$city}<br>
-    Pays: {$country}<br>
-    Adresse e-mail: {$email}<br>
-    Téléphone: {$phone}<br>
-    Message : {$message|nl2br nofilter}
+    Nom: {$lastname|default:null}<br>
+    Prénom: {$firstname|default:null}<br>
+    Société: {$company|default:null}<br>
+    Fonction: {$function|default:null}<br>
+    Adresse: {$address|default:null|nl2br nofilter}<br>
+    Code postal: {$zipcode|default:null}<br>
+    Ville: {$city|default:null}<br>
+    Pays: {$country|default:null}<br>
+    Adresse e-mail: {$email|default:null}<br>
+    Téléphone: {$phone|default:null}<br>
+    Message : {$message|default:null|nl2br nofilter}
 </p>
 <p>Bonne journée !</p>

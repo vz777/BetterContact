@@ -54,7 +54,15 @@ class ContactController extends BaseFrontController
             
             $message = $this->getMailer()->createEmailMessage(
                 BetterContact::MESSAGE_NAME,
-                [ConfigQuery::getStoreEmail() => $fullName],
+                //[ConfigQuery::getStoreEmail() => $fullName],
+                // If the line below is leaved, i found the fullname(firstname+lastname) use by the controller to fill the field email and found on  
+                //  submit form : Email "" does not comply with addr-spec of RFC 2822.
+
+                //Maybe there is something change on thelia 2.5 on this side
+
+                //There is certainly better to do but for the moment it works with the following line
+
+                [ConfigQuery::getStoreEmail() => ConfigQuery::getStoreName()],
                 [ConfigQuery::getStoreEmail() => ConfigQuery::getStoreName()],
                 $data
             );

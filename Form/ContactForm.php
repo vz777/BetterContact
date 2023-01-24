@@ -15,6 +15,9 @@ namespace BetterContact\Form;
 use BetterContact\BetterContact;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Thelia\Core\Translation\Translator;
 use Thelia\Form\FirewallForm;
 
@@ -28,7 +31,7 @@ class ContactForm extends FirewallForm
     protected function buildForm()
     {
         $this->formBuilder
-            ->add('lastname', 'text', array(
+            ->add('lastname', TextType::class, array(
                 'constraints' => array(
                     new NotBlank()
                 ),
@@ -37,7 +40,7 @@ class ContactForm extends FirewallForm
                     'placeholder' => $this->translator->trans('Your last Name', [], BetterContact::DOMAIN_NAME),
                 ]
             ))
-            ->add('firstname', 'text', array(
+            ->add('firstname', TextType::class, array(
                 'constraints' => array(
                     new NotBlank()
                 ),
@@ -46,7 +49,7 @@ class ContactForm extends FirewallForm
                     'placeholder' => $this->translator->trans('Your first Name', [], BetterContact::DOMAIN_NAME),
                 ]
             ))
-            ->add('company', 'text', array(
+            ->add('company', TextType::class, array(
                 'constraints' => array(
                     new NotBlank()
                 ),
@@ -55,7 +58,7 @@ class ContactForm extends FirewallForm
                     'placeholder' => $this->translator->trans('Name of your company', [], BetterContact::DOMAIN_NAME),
                 ]
             ))
-            ->add('function', 'text', array(
+            ->add('function', TextType::class, array(
                 'constraints' => array(
                     new NotBlank()
                 ),
@@ -64,7 +67,7 @@ class ContactForm extends FirewallForm
                     'placeholder' => $this->translator->trans('Your function in the company', [], BetterContact::DOMAIN_NAME),
                 ]
             ))
-            ->add('address', 'textarea', array(
+            ->add('address', TextType::class, array(
                 'constraints' => array(
                     new NotBlank()
                 ),
@@ -73,7 +76,7 @@ class ContactForm extends FirewallForm
                     'placeholder' => $this->translator->trans('Address of your company', [], BetterContact::DOMAIN_NAME),
                 ]
             ))
-            ->add('zipcode', 'text', array(
+            ->add('zipcode', TextType::class, array(
                 'constraints' => array(
                     new NotBlank()
                 ),
@@ -82,7 +85,7 @@ class ContactForm extends FirewallForm
                     'placeholder' => $this->translator->trans('Company zip code', [], BetterContact::DOMAIN_NAME),
                 ]
             ))
-            ->add('city', 'text', array(
+            ->add('city', TextType::class, array(
                 'constraints' => array(
                     new NotBlank()
                 ),
@@ -91,7 +94,7 @@ class ContactForm extends FirewallForm
                     'placeholder' => $this->translator->trans('Company city', [], BetterContact::DOMAIN_NAME),
                 ]
             ))
-            ->add('country', 'text', array(
+            ->add('country', TextType::class, array(
                 'constraints' => array(
                     new NotBlank()
                 ),
@@ -100,7 +103,7 @@ class ContactForm extends FirewallForm
                     'placeholder' => $this->translator->trans('Company country', [], BetterContact::DOMAIN_NAME),
                 ]
             ))
-            ->add('email', 'email', array(
+            ->add('email', EmailType::class, array(
                 'constraints' => array(
                     new NotBlank()
                 ),
@@ -109,7 +112,7 @@ class ContactForm extends FirewallForm
                     'placeholder' => $this->translator->trans('Your e-mail address', [], BetterContact::DOMAIN_NAME),
                 ]
             ))
-            ->add('phone', 'text', array(
+            ->add('phone', TextType::class, array(
                 'constraints' => array(
                     new NotBlank()
                 ),
@@ -118,7 +121,7 @@ class ContactForm extends FirewallForm
                     'placeholder' => $this->translator->trans('Your phone number', [], BetterContact::DOMAIN_NAME),
                 ]
             ))
-            ->add('message', 'textarea', array(
+            ->add('message', TextareaType::class, array(
                 'constraints' => array(
                     new NotBlank()
                 ),
@@ -133,7 +136,7 @@ class ContactForm extends FirewallForm
     /**
      * @return string the name of you form. This name must be unique
      */
-    public function getName()
+    public static function getName()
     {
         return 'better_contact_form';
     }

@@ -3,16 +3,16 @@ Bonjour,
 Un nouveau message de contact vient d'être envoyé :
 
 Date: {format_date date=$date}
-Nom: {$lastname}
-Prénom: {$firstname}
-Société: {$company}
-Fonction: {$function}
-Adresse: {$address nofilter}
-Code postal: {$zipcode}
-Ville: {$city}
-Pays: {$country}
-Adresse e-mail: {$email}
-Téléphone: {$phone}
-Message : {$message nofilter}
+Nom: {$lastname|default:null}
+Prénom: {$firstname|default:null}
+Société: {$company|default:null}
+Fonction: {$function|default:null}
+Adresse: {$address|default:null nofilter}
+Code postal: {$zipcode|default:null}
+Ville: {$city|default:null}
+Pays: {$country|default:null}
+Adresse e-mail: {$email|default:null}
+Téléphone: {$phone|default:null}
+Message : {$message|default:null nofilter}
 
 Bonne journée !

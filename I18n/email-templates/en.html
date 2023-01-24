@@ -4,17 +4,17 @@
 
 <p>
     Date: {format_date date=$date}<br>
-    Last name: {$lastname}<br>
-    First name: {$firstname}<br>
-    Company: {$company}<br>
-    Fonction: {$function}<br>
-    Address: {$address|nl2br nofilter}<br>
-    Zip code: {$zipcode}<br>
-    City: {$city}<br>
-    Country: {$country}<br>
-    E-mail address: {$email}<br>
-    Phone: {$phone}<br>
-    Message : {$message|nl2br nofilter}
+    Last name: {$lastname|default:null}<br>
+    First name: {$firstname|default:null}<br>
+    Company: {$company|default:null}<br>
+    Fonction: {$function|default:null}<br>
+    Address: {$address|default:null|nl2br nofilter}<br>
+    Zip code: {$zipcode|default:null}<br>
+    City: {$city|default:null}<br>
+    Country: {$country|default:null}<br>
+    E-mail address: {$email|default:null}<br>
+    Phone: {$phone|default:null}<br>
+    Message : {$message|default:null|nl2br nofilter}
 </p>
 
 <p>Have a nice day !</p>
